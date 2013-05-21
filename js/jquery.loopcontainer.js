@@ -12,9 +12,55 @@
     Applies to GIF images only, and all images must have identical size.
     Requires a modern browser (IE10+, FF20+)
 
+    This jQuery plugin is available under both the MIT and GPL license.
+
+    MIT License
+
+    Copyright (c) 2013 tobozo
+
+    Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation
+    files (the "Software"), to deal in the Software without
+    restriction, including without limitation the rights to use,
+    copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the
+    Software is furnished to do so, subject to the following
+    conditions:
+
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+    OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+    NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+    HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+    WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+    OTHER DEALINGS IN THE SOFTWARE.
+
+
+    GPL License
+
+    Copyright (C) 2013 tobozo
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 ********************************/
 
-;(function() {
+;(function($) {
+  
   $.fn.loopContainer = function(options) {
     options = $.extend({}, $.fn.loopContainer.defaultOptions, options);
     if(!window.loops || options.reset) {
@@ -136,6 +182,7 @@
         updateFrameCount();
     }, window.loops.itemIntervals[elemId]);
   };
+  
 })(jQuery);
 
 
@@ -153,15 +200,19 @@
       var framepos = window.loops.currentItems.render;
       var delay = $('#output img').eq(framepos).attr("data-delay"); // window.loops.items.render[window.loops.currentItems.render].delay();
       var uid   = $('#output img').eq(framepos).attr("data-id"); // window.loops.items.render[window.loops.currentItems.render].id;
+      var color = $('#render img').eq(framepos).attr("data-color") || '[not set]';
     } catch(e) {
       $('#stats').html('');
       return;
     }
     $('#stats').html(
-      "Delay: <span class='delay' onclick=setDelay("+uid+")>" + delay +"</span><br>"
-      + "Position: " + framepos
+      'Delay: <span class="delay" onclick="setDelay('+uid+')">' + delay +'</span><br>'
+      + 'Position: ' + framepos
       +'<br>'
-      + "ID: <span class='uid'>" + uid + "</span>"
+      + 'ID: <span class="uid">' + uid + '</span>'
+      + '<div class="colorPaletteIconStats" onclick="setPalette()" title="Pick a different color for transparency"></div>'
+      + '<div class="colorPaletteColorBox" style="background-color:'+color+'"></div>'
+      + '<div class="colorPaletteValueStats" onclick="setColorValue('+uid+')" title="Manually edit color for transparency">'+color+'</div>'
     );
   };
 
@@ -211,6 +262,32 @@
       $('#animDuration').html( animDuration() );
     }
   }
+
+  function setPalette() {
+    if(loops.isLooping.render) {
+      return false;
+    }
+    $('#factory').trigger('colorset');
+  }
+
+  function setColorValue(id) {
+    if(loops.isLooping.render) {
+      return false;
+    }
+    $('#render img').trigger('clear');
+    var newcolor;
+    var oldcolor = $('.colorPaletteValueStats').html();
+    if(newcolor = prompt('New color', oldcolor)) {
+      if($.fn.gifAnimator.forceColorToHex(newcolor)!=null) {
+        $('#render img').attr("data-color", newcolor);
+        $('#output img').attr("data-color", newcolor);
+        $('.colorPaletteValueStats').html(newcolor);
+      } else {
+        $('#factory').popText("Invalid color value (valid values are hex/rgb)");
+      }
+    }
+  }
+
 
 
   function AddZero(num) {
@@ -283,11 +360,12 @@
             //$('#uploadProgressMessage').html('Sending Complete');
           }
       });
-      
+
+      var now = new Date();
+      var strDateTime = [[AddZero(now.getFullYear()), AddZero(now.getMonth() + 1), now.getDate()].join("-"), 'at', [AddZero(now.getHours()), AddZero(now.getMinutes())].join(":"), now.getHours() >= 12 ? "PM" : "AM"].join(" ");
+
       $.get('https://api.imgur.com/3/album/'+albumId, function(response) {
           var albumImages;
-          var now = new Date();
-          var strDateTime = [[AddZero(now.getFullYear()), AddZero(now.getMonth() + 1), now.getDate()].join("-"), 'at', [AddZero(now.getHours()), AddZero(now.getMinutes())].join(":"), now.getHours() >= 12 ? "PM" : "AM"].join(" ");
           
           try {
             response = $.parseJSON(response);
@@ -328,9 +406,12 @@
          
       }).error(function() {
           $.post('https://api.imgur.com/3/album/', {
-            id:'jquery-sheep-factory',
-            description:'Sheeps generated by the jQuery Sheep Factory : http://phpsecure.info/sheep-factory.php',
-            title:'Animated Gifs from the jQuery Sheep Factory'
+               type: 'base64',
+               name: 'phpsecure.info-sheep-factory.php-sheep.gif',
+              title: 'Contributed on ' + strDateTime,
+            caption: 'Generated by the Sheep Factory http://phpsecure.info/sheep-factory.php '+strDateTime,
+              image: img,
+              album: albumHash
           }).success(function(response) {
              // console.log('response ', response);
           })

@@ -48,7 +48,7 @@
           backgroundPosition:'center center',
           backgroundRepeat:'no-repeat',
           transition:"all 0.2s ease-out"
-        }).attr('src', pixelTrans);;
+        }).attr('src', pixelTrans);
 
         element.on('mouseover', function() {
           $(this).css({
@@ -82,6 +82,7 @@
           $(this).attr('src', $(this).attr('data-src'));
         });
       }
+      $(this).addClass('hoverUnZoom');
     });
     return this;
   };
