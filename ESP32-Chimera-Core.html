@@ -1,0 +1,203 @@
+<!doctype html><html>
+    <style>
+
+    body {
+      font-family: arial, courier new, sans-serif, sans;
+      line-height: 1.25rem;
+      font-size: 16px;
+    }
+
+    li:empty {
+      display: none;
+      position:absolute;
+    }
+
+    .digest {
+      font-family: sans-serif;
+      font-size: .9rem;
+    }
+    .digest dt {
+      max-width: 8em;
+      overflow: hidden;
+      white-space: nowrap;
+      line-height: 1.35rem;
+    }
+    .digest dd {
+      position: absolute;
+      transform: translate(8em, -1.35rem);
+      left: 0;
+      font-weight: bold;
+    }
+
+
+    ol.stars, ol.repos {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .repos-list > li, .users-list > li {
+      white-space: nowrap;
+      font-size:.85rem;
+    }
+
+    ul.top-10 {
+      display: block;
+      margin: 0;
+      padding: 0;
+      max-height: 22rem;
+      overflow: hidden;
+    }
+
+    ul.top-10 > li {
+      display: inline-block;
+      overflow: hidden;
+      margin-right: 1rem;
+      vertical-align: top;
+      min-width: 25%;
+      max-width: 32%;
+    }
+
+    ul.top-10 > li > h3 {
+      font-size: 1rem;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-bottom: .5rem;
+    }
+
+    .octicon {
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+      width:16px;
+      height:16px;
+    }
+
+    /**.stars*/
+    li[value]::marker {
+      display:none;
+    }
+
+    .stars li[value]::before,
+    .repos li[value]::before {
+     font-size: .85rem;
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+      content: "  " attr(value) "  ";
+      background-repeat: no-repeat;
+      background-position: left center;
+      text-indent: 1.1rem;
+      margin-right: 0.5rem;
+    }
+
+    .stars li[value]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='octicon octicon-star mr-1' viewBox='0 0 16 16' version='1.1' width='16' height='16' aria-hidden='true'%3E%3Cpath fill-rule='evenodd' d='M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z'%3E%3C/path%3E%3C/svg%3E");
+    }
+
+    .repos li[value]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true' class='octicon octicon-repo mr-1 color-fg-muted'%3E%3Cpath fill-rule='evenodd' d='M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z'%3E%3C/path%3E%3C/svg%3E");
+    }
+
+    </style>
+  <dl class="digest"><dt>Keyword</dt><dd><a href="https://github.com/search?type=code&q=ESP32-Chimera-Core">ESP32-Chimera-Core</a></li></dd><dt>Overall progress</dt><dd>100%</dd>
+<dt>API Success rate</dt><dd>72% (11 requests, 3 errors)</dd>
+<dt>Repositories</dt><dd>59</dd>
+<dt>Accounts</dt><dd>32</dd>
+</dl>
+<h3>Items added in this session: 1</h3><ol class="repos-list">
+  <li><a href="https://github.com/tobozo/tobozo.github.io">tobozo/tobozo.github.io</a></li>
+</ol>
+
+  <ul class="top-10">
+    <li><h3>Top10 projects by stars</h3>
+<ol class="repos-list stars">
+  <li value=536><a title="G4lile0/ESP32-WiFi-Hash-Monster" href="https://github.com/G4lile0/ESP32-WiFi-Hash-Monster">ESP32-WiFi-Hash-Monster</a></li>
+  <li value=425><a title="lovyan03/LovyanGFX" href="https://github.com/lovyan03/LovyanGFX">LovyanGFX</a></li>
+  <li value=367><a title="SuperIlu/DOjS" href="https://github.com/SuperIlu/DOjS">DOjS</a></li>
+  <li value=221><a title="tobozo/M5Stack-SD-Updater" href="https://github.com/tobozo/M5Stack-SD-Updater">M5Stack-SD-Updater</a></li>
+  <li value=177><a title="bitbank2/AnimatedGIF" href="https://github.com/bitbank2/AnimatedGIF">AnimatedGIF</a></li>
+  <li value=173><a title="tobozo/ESP32-BLECollector" href="https://github.com/tobozo/ESP32-BLECollector">ESP32-BLECollector</a></li>
+  <li value=119><a title="tobozo/ESP32-Chimera-Core" href="https://github.com/tobozo/ESP32-Chimera-Core">ESP32-Chimera-Core</a></li>
+  <li value=91><a title="tobozo/ESP32-USB-Soft-Host" href="https://github.com/tobozo/ESP32-USB-Soft-Host">ESP32-USB-Soft-Host</a></li>
+  <li value=65><a title="tobozo/ESP32-targz" href="https://github.com/tobozo/ESP32-targz">ESP32-targz</a></li>
+  <li value=39><a title="fan-ziqi/My_HoloCubic" href="https://github.com/fan-ziqi/My_HoloCubic">My_HoloCubic</a></li>
+</ol></li><li><h3>Top10 accounts by stars</h3>
+<ol class="users-list stars">
+  <li value=772><a href="https://github.com/tobozo">tobozo</a></li>
+  <li value=536><a href="https://github.com/G4lile0">G4lile0</a></li>
+  <li value=425><a href="https://github.com/lovyan03">lovyan03</a></li>
+  <li value=367><a href="https://github.com/SuperIlu">SuperIlu</a></li>
+  <li value=177><a href="https://github.com/bitbank2">bitbank2</a></li>
+  <li value=39><a href="https://github.com/fan-ziqi">fan-ziqi</a></li>
+  <li value=13><a href="https://github.com/Kongduino">Kongduino</a></li>
+  <li value=11><a href="https://github.com/tanner87661">tanner87661</a></li>
+  <li value=9><a href="https://github.com/fhdm-dev">fhdm-dev</a></li>
+  <li value=9><a href="https://github.com/mongonta0716">mongonta0716</a></li>
+</ol></li><li><h3>Top10 accounts by projects owned</h3>
+<ol class="users-list repos">
+  <li value=18><a href="https://github.com/tobozo">tobozo</a></li>
+  <li value=3><a href="https://github.com/Shahrukh-13">Shahrukh-13</a></li>
+  <li value=3><a href="https://github.com/xshigee">xshigee</a></li>
+  <li value=3><a href="https://github.com/micutil">micutil</a></li>
+  <li value=3><a href="https://github.com/mongonta0716">mongonta0716</a></li>
+  <li value=2><a href="https://github.com/Mchaney3">Mchaney3</a></li>
+  <li value=2><a href="https://github.com/Kongduino">Kongduino</a></li>
+  <li value=1><a href="https://github.com/okuoku">okuoku</a></li>
+  <li value=1><a href="https://github.com/patfelst">patfelst</a></li>
+  <li value=1><a href="https://github.com/kshpin">kshpin</a></li>
+</ol></li>
+  </ul>
+<h3>Listing 49 remaining projects</h3>
+<ol class="repos-list stars">
+  <li value=16><a href="https://github.com/tobozo/M5Stack-ESP12-Shield">tobozo/M5Stack-ESP12-Shield</a></li>
+  <li value=13><a href="https://github.com/tobozo/esp32-DCF77_Analyzer_Clock">tobozo/esp32-DCF77_Analyzer_Clock</a></li>
+  <li value=12><a href="https://github.com/tobozo/WiFiChanViz">tobozo/WiFiChanViz</a></li>
+  <li value=11><a href="https://github.com/tobozo/ImgurUploader">tobozo/ImgurUploader</a></li>
+  <li value=11><a href="https://github.com/tanner87661/IoTTStick">tanner87661/IoTTStick</a></li>
+  <li value=9><a href="https://github.com/tobozo/M5Rotatey_Cube">tobozo/M5Rotatey_Cube</a></li>
+  <li value=9><a href="https://github.com/tobozo/ESP32-GifPlayer">tobozo/ESP32-GifPlayer</a></li>
+  <li value=9><a href="https://github.com/Kongduino/M5_GPS_On_Serial2_Static_Map">Kongduino/M5_GPS_On_Serial2_Static_Map</a></li>
+  <li value=9><a href="https://github.com/fhdm-dev/pico-arduino-compat">fhdm-dev/pico-arduino-compat</a></li>
+  <li value=8><a href="https://github.com/tobozo/ESP32-Tesseract">tobozo/ESP32-Tesseract</a></li>
+  <li value=7><a href="https://github.com/tobozo/ESP32-Hector">tobozo/ESP32-Hector</a></li>
+  <li value=7><a href="https://github.com/dl9sec/AioP13">dl9sec/AioP13</a></li>
+  <li value=7><a href="https://github.com/mongonta0716/M5Core2-Image-Avatar">mongonta0716/M5Core2-Image-Avatar</a></li>
+  <li value=7><a href="https://github.com/tobozo/ESP32-SIDView">tobozo/ESP32-SIDView</a></li>
+  <li value=5><a href="https://github.com/tobozo/ESP32-MSGEQ7">tobozo/ESP32-MSGEQ7</a></li>
+  <li value=4><a href="https://github.com/CircuitMess/Arduino-ESP32">CircuitMess/Arduino-ESP32</a></li>
+  <li value=4><a href="https://github.com/Kongduino/M5_BMP280">Kongduino/M5_BMP280</a></li>
+  <li value=3><a href="https://github.com/tobozo/LGFXMeter">tobozo/LGFXMeter</a></li>
+  <li value=3><a href="https://github.com/spectrenoir06/tamagotchi_esp32">spectrenoir06/tamagotchi_esp32</a></li>
+  <li value=3><a href="https://github.com/micutil/M5Stack_RSTester">micutil/M5Stack_RSTester</a></li>
+  <li value=3><a href="https://github.com/jlswbs/Odroid_Go">jlswbs/Odroid_Go</a></li>
+  <li value=2><a href="https://github.com/tobozo/M5Core2-SoundBouncer">tobozo/M5Core2-SoundBouncer</a></li>
+  <li value=2><a href="https://github.com/mongonta0716/M5Stack-MLX90640">mongonta0716/M5Stack-MLX90640</a></li>
+  <li value=1><a href="https://github.com/asuto15/robocon-11-arduino">asuto15/robocon-11-arduino</a></li>
+  <li value=1><a href="https://github.com/vuxat/gitter_examples">vuxat/gitter_examples</a></li>
+  <li value=1><a href="https://github.com/vkichline/M5Sys2">vkichline/M5Sys2</a></li>
+  <li value=1><a href="https://github.com/tobozo/tobozo.github.io">tobozo/tobozo.github.io</a></li>
+  <li value=1><a href="https://github.com/qaptadrone/UAV-Beacon-Monitor">qaptadrone/UAV-Beacon-Monitor</a></li>
+  <li value=1><a href="https://github.com/micutil/M5Stack_RoVoCoMo2">micutil/M5Stack_RoVoCoMo2</a></li>
+  <li value=1><a href="https://github.com/micutil/TelloJack">micutil/TelloJack</a></li>
+  <li value=0><a href="https://github.com/xshigee/web0">xshigee/web0</a></li>
+  <li value=0><a href="https://github.com/xshigee/test">xshigee/test</a></li>
+  <li value=0><a href="https://github.com/xshigee/gitbook1">xshigee/gitbook1</a></li>
+  <li value=0><a href="https://github.com/zsuzuki/M5StickGraph">zsuzuki/M5StickGraph</a></li>
+  <li value=0><a href="https://github.com/patfelst/MQTT-test-M5-Stack-Core2">patfelst/MQTT-test-M5-Stack-Core2</a></li>
+  <li value=0><a href="https://github.com/Shahrukh-13/ESP32_GIF_upload">Shahrukh-13/ESP32_GIF_upload</a></li>
+  <li value=0><a href="https://github.com/Shahrukh-13/ESP32_Venom_GIF">Shahrukh-13/ESP32_Venom_GIF</a></li>
+  <li value=0><a href="https://github.com/Shahrukh-13/ESP32_GIF_OTA">Shahrukh-13/ESP32_GIF_OTA</a></li>
+  <li value=0><a href="https://github.com/Mchaney3/Projects">Mchaney3/Projects</a></li>
+  <li value=0><a href="https://github.com/Galaxy-Man/ESP32animatedGifDMA">Galaxy-Man/ESP32animatedGifDMA</a></li>
+  <li value=0><a href="https://github.com/Mchaney3/AXSResearch">Mchaney3/AXSResearch</a></li>
+  <li value=0><a href="https://github.com/chazp246/stm8_nozka">chazp246/stm8_nozka</a></li>
+  <li value=0><a href="https://github.com/gromain/UAV-Beacon-Monitor">gromain/UAV-Beacon-Monitor</a></li>
+  <li value=0><a href="https://github.com/okuoku/esp32test">okuoku/esp32test</a></li>
+  <li value=0><a href="https://github.com/ropg/LGFX-docs-en">ropg/LGFX-docs-en</a></li>
+  <li value=0><a href="https://github.com/mongonta0716/M5Core2ImageAvatarLitePlus">mongonta0716/M5Core2ImageAvatarLitePlus</a></li>
+  <li value=0><a href="https://github.com/kshpin/iot-control">kshpin/iot-control</a></li>
+  <li value=0><a href="https://github.com/jpg63/GnuVarioE2.1">jpg63/GnuVarioE2.1</a></li>
+  <li value=0><a href="https://github.com/satriawijayandaru/arduinoLibs">satriawijayandaru/arduinoLibs</a></li>
+</ol></html>
