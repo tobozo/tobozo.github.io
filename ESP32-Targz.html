@@ -12,6 +12,26 @@
       position:absolute;
     }
 
+    li.nobullet {
+      list-style-type: disc;
+    }
+
+
+    .progress {
+      display:inline-block;
+      height: 0.2em;
+      width: 10em;
+      animation-name: progress;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+    }
+    @keyframes progress {
+      0% { width: 10em; background: white; }
+      1% { background: black; width: 10em; }
+      99% { background: black; width: 0em; }
+      100% { width: 0em; background: white; }
+    }
+
     .digest {
       font-family: sans-serif;
       font-size: .9rem;
@@ -30,7 +50,7 @@
     }
 
 
-    ol.stars, ol.repos {
+    ol.stars, ol.repos, ol.items {
       list-style-type: none;
       padding-left: 0;
     }
@@ -53,8 +73,8 @@
       overflow: hidden;
       margin-right: 1rem;
       vertical-align: top;
-      min-width: 25%;
-      max-width: 32%;
+      min-width: 20%;
+      max-width: 24%;
     }
 
     ul.top-10 > li > h3 {
@@ -79,7 +99,8 @@
     }
 
     .stars li[value]::before,
-    .repos li[value]::before {
+    .repos li[value]::before,
+    .items li[value]::before {
      font-size: .85rem;
       display: inline-block;
       overflow: visible !important;
@@ -100,85 +121,97 @@
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true' class='octicon octicon-repo mr-1 color-fg-muted'%3E%3Cpath fill-rule='evenodd' d='M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z'%3E%3C/path%3E%3C/svg%3E");
     }
 
+    .items li[value]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-label='File' aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true' class='octicon octicon-file color-fg-muted'%3E%3Cpath fill-rule='evenodd' d='M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z'%3E%3C/path%3E%3C/svg%3E")
+    }
+
     </style>
-  <dl class="digest"><dt>Keyword</dt><dd><a href="https://github.com/search?type=code&q=ESP32-Targz">ESP32-Targz</a></li></dd><dt>Overall progress</dt><dd>100%</dd>
-<dt>API Success rate</dt><dd>69% (13 requests, 4 errors)</dd>
-<dt>Repositories</dt><dd>40</dd>
+  <dl class="digest"><dt>Keyword</dt><dd><a rel="noreferrer" href="https://github.com/search?type=code&q=ESP32-Targz">ESP32-Targz</a></li></dd><dt>Overall progress</dt><dd>100%</dd>
+<dt>API Success rate</dt><dd>100% (9 requests, 0 error)</dd>
+<dt>Repositories</dt><dd>39</dd>
 <dt>Accounts</dt><dd>25</dd>
 </dl>
-<h3>Items added in this session: 1</h3><ol class="repos-list">
-  <li><a href="https://github.com/tobozo/tobozo.github.io">tobozo/tobozo.github.io</a></li>
-</ol>
 
   <ul class="top-10">
     <li><h3>Top10 projects by stars</h3>
 <ol class="repos-list stars">
-  <li value=336><a title="sharandac/My-TTGO-Watch" href="https://github.com/sharandac/My-TTGO-Watch">My-TTGO-Watch</a></li>
-  <li value=221><a title="tobozo/M5Stack-SD-Updater" href="https://github.com/tobozo/M5Stack-SD-Updater">M5Stack-SD-Updater</a></li>
-  <li value=65><a title="tobozo/ESP32-targz" href="https://github.com/tobozo/ESP32-targz">ESP32-targz</a></li>
-  <li value=34><a title="prunkdump/GNUVario-TTGO-T5" href="https://github.com/prunkdump/GNUVario-TTGO-T5">GNUVario-TTGO-T5</a></li>
-  <li value=11><a title="re-innovation/TTGO_EPaper" href="https://github.com/re-innovation/TTGO_EPaper">TTGO_EPaper</a></li>
-  <li value=9><a title="fhdm-dev/pico-arduino-compat" href="https://github.com/fhdm-dev/pico-arduino-compat">pico-arduino-compat</a></li>
-  <li value=9><a title="tobozo/ESP32-GifPlayer" href="https://github.com/tobozo/ESP32-GifPlayer">ESP32-GifPlayer</a></li>
-  <li value=8><a title="Photonsters/ESParaSite" href="https://github.com/Photonsters/ESParaSite">ESParaSite</a></li>
-  <li value=7><a title="tobozo/ESP32-SIDView" href="https://github.com/tobozo/ESP32-SIDView">ESP32-SIDView</a></li>
-  <li value=5><a title="frankcohen/ReflectionsOS" href="https://github.com/frankcohen/ReflectionsOS">ReflectionsOS</a></li>
+  <li value=336><a title="sharandac/My-TTGO-Watch" rel="noreferrer" href="https://github.com/sharandac/My-TTGO-Watch">sharandac/My-TTGO-Watch</a></li>
+  <li value=221><a title="tobozo/M5Stack-SD-Updater" rel="noreferrer" href="https://github.com/tobozo/M5Stack-SD-Updater">tobozo/M5Stack-SD-Updater</a></li>
+  <li value=65><a title="tobozo/ESP32-targz" rel="noreferrer" href="https://github.com/tobozo/ESP32-targz">tobozo/ESP32-targz</a></li>
+  <li value=34><a title="prunkdump/GNUVario-TTGO-T5" rel="noreferrer" href="https://github.com/prunkdump/GNUVario-TTGO-T5">prunkdump/GNUVario-TTGO-T5</a></li>
+  <li value=11><a title="re-innovation/TTGO_EPaper" rel="noreferrer" href="https://github.com/re-innovation/TTGO_EPaper">re-innovation/TTGO_EPaper</a></li>
+  <li value=9><a title="fhdm-dev/pico-arduino-compat" rel="noreferrer" href="https://github.com/fhdm-dev/pico-arduino-compat">fhdm-dev/pico-arduino-compat</a></li>
+  <li value=9><a title="tobozo/ESP32-GifPlayer" rel="noreferrer" href="https://github.com/tobozo/ESP32-GifPlayer">tobozo/ESP32-GifPlayer</a></li>
+  <li value=8><a title="Photonsters/ESParaSite" rel="noreferrer" href="https://github.com/Photonsters/ESParaSite">Photonsters/ESParaSite</a></li>
+  <li value=7><a title="tobozo/ESP32-SIDView" rel="noreferrer" href="https://github.com/tobozo/ESP32-SIDView">tobozo/ESP32-SIDView</a></li>
+  <li value=5><a title="frankcohen/ReflectionsOS" rel="noreferrer" href="https://github.com/frankcohen/ReflectionsOS">frankcohen/ReflectionsOS</a></li>
+</ol></li><li><h3>Top10 projects by items</h3>
+<ol class="repos-list items">
+  <li value=16><a rel="noreferrer" title="jpg63/Gnuvario_for_TTGO-T5" href="https://github.com/jpg63/Gnuvario_for_TTGO-T5/search?q=ESP32-Targz">Gnuvario_for_TTGO-T5</a></li>
+  <li value=16><a rel="noreferrer" title="prunkdump/GNUVario-TTGO-T5" href="https://github.com/prunkdump/GNUVario-TTGO-T5/search?q=ESP32-Targz">GNUVario-TTGO-T5</a></li>
+  <li value=16><a rel="noreferrer" title="s-reynier/gnuvario-e-bno08x" href="https://github.com/s-reynier/gnuvario-e-bno08x/search?q=ESP32-Targz">gnuvario-e-bno08x</a></li>
+  <li value=12><a rel="noreferrer" title="frankcohen/ReflectionsOS" href="https://github.com/frankcohen/ReflectionsOS/search?q=ESP32-Targz">ReflectionsOS</a></li>
+  <li value=11><a rel="noreferrer" title="michelpa/GnuVarioE" href="https://github.com/michelpa/GnuVarioE/search?q=ESP32-Targz">GnuVarioE</a></li>
+  <li value=11><a rel="noreferrer" title="jpg63/GnuvarioE_Dev" href="https://github.com/jpg63/GnuvarioE_Dev/search?q=ESP32-Targz">GnuvarioE_Dev</a></li>
+  <li value=11><a rel="noreferrer" title="s-reynier/gnuvario-e" href="https://github.com/s-reynier/gnuvario-e/search?q=ESP32-Targz">gnuvario-e</a></li>
+  <li value=11><a rel="noreferrer" title="AndyB1ack/001" href="https://github.com/AndyB1ack/001/search?q=ESP32-Targz">001</a></li>
+  <li value=11><a rel="noreferrer" title="jpg63/GnuVarioE2.1" href="https://github.com/jpg63/GnuVarioE2.1/search?q=ESP32-Targz">GnuVarioE2.1</a></li>
+  <li value=10><a rel="noreferrer" title="AlexSA6002/-GNUVarioE_Alex" href="https://github.com/AlexSA6002/-GNUVarioE_Alex/search?q=ESP32-Targz">-GNUVarioE_Alex</a></li>
 </ol></li><li><h3>Top10 accounts by stars</h3>
 <ol class="users-list stars">
-  <li value=336><a href="https://github.com/sharandac">sharandac</a></li>
-  <li value=303><a href="https://github.com/tobozo">tobozo</a></li>
-  <li value=34><a href="https://github.com/prunkdump">prunkdump</a></li>
-  <li value=11><a href="https://github.com/re-innovation">re-innovation</a></li>
-  <li value=9><a href="https://github.com/fhdm-dev">fhdm-dev</a></li>
-  <li value=9><a href="https://github.com/Photonsters">Photonsters</a></li>
-  <li value=5><a href="https://github.com/frankcohen">frankcohen</a></li>
-  <li value=4><a href="https://github.com/jpg63">jpg63</a></li>
-  <li value=2><a href="https://github.com/isemann">isemann</a></li>
-  <li value=1><a href="https://github.com/GNUVario-E">GNUVario-E</a></li>
+  <li value=336><a rel="noreferrer" href="https://github.com/sharandac?tab=repositories&sort=stargazers">sharandac</a></li>
+  <li value=302><a rel="noreferrer" href="https://github.com/tobozo?tab=repositories&sort=stargazers">tobozo</a></li>
+  <li value=34><a rel="noreferrer" href="https://github.com/prunkdump?tab=repositories&sort=stargazers">prunkdump</a></li>
+  <li value=11><a rel="noreferrer" href="https://github.com/re-innovation?tab=repositories&sort=stargazers">re-innovation</a></li>
+  <li value=9><a rel="noreferrer" href="https://github.com/fhdm-dev?tab=repositories&sort=stargazers">fhdm-dev</a></li>
+  <li value=9><a rel="noreferrer" href="https://github.com/orgs/Photonsters/repositories?sort=stargazers">Photonsters</a></li>
+  <li value=5><a rel="noreferrer" href="https://github.com/frankcohen?tab=repositories&sort=stargazers">frankcohen</a></li>
+  <li value=4><a rel="noreferrer" href="https://github.com/jpg63?tab=repositories&sort=stargazers">jpg63</a></li>
+  <li value=2><a rel="noreferrer" href="https://github.com/isemann?tab=repositories&sort=stargazers">isemann</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/orgs/yubox-node-org/repositories?sort=stargazers">yubox-node-org</a></li>
 </ol></li><li><h3>Top10 accounts by projects owned</h3>
 <ol class="users-list repos">
-  <li value=5><a href="https://github.com/tobozo">tobozo</a></li>
-  <li value=4><a href="https://github.com/warrenberberd">warrenberberd</a></li>
-  <li value=4><a href="https://github.com/isemann">isemann</a></li>
-  <li value=3><a href="https://github.com/s-reynier">s-reynier</a></li>
-  <li value=3><a href="https://github.com/jpg63">jpg63</a></li>
-  <li value=2><a href="https://github.com/Photonsters">Photonsters</a></li>
-  <li value=1><a href="https://github.com/AlexSA6002">AlexSA6002</a></li>
-  <li value=1><a href="https://github.com/vioeole">vioeole</a></li>
-  <li value=1><a href="https://github.com/pensactius">pensactius</a></li>
-  <li value=1><a href="https://github.com/remyar">remyar</a></li>
+  <li value=4><a rel="noreferrer" href="https://github.com/warrenberberd?tab=repositories&type=source">warrenberberd</a></li>
+  <li value=4><a rel="noreferrer" href="https://github.com/isemann?tab=repositories&type=source">isemann</a></li>
+  <li value=4><a rel="noreferrer" href="https://github.com/tobozo?tab=repositories&type=source">tobozo</a></li>
+  <li value=3><a rel="noreferrer" href="https://github.com/s-reynier?tab=repositories&type=source">s-reynier</a></li>
+  <li value=3><a rel="noreferrer" href="https://github.com/jpg63?tab=repositories&type=source">jpg63</a></li>
+  <li value=2><a rel="noreferrer" href="https://github.com/orgs/Photonsters/repositories?type=source">Photonsters</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/AlexSA6002?tab=repositories&type=source">AlexSA6002</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/vioeole?tab=repositories&type=source">vioeole</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/pensactius?tab=repositories&type=source">pensactius</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/remyar?tab=repositories&type=source">remyar</a></li>
 </ol></li>
   </ul>
-<h3>Listing 30 remaining projects</h3>
+<h3>Listing 29 remaining projects</h3>
 <ol class="repos-list stars">
-  <li value=2><a href="https://github.com/jpg63/GnuvarioE_Dev">jpg63/GnuvarioE_Dev</a></li>
-  <li value=2><a href="https://github.com/jpg63/Gnuvario_for_TTGO-T5">jpg63/Gnuvario_for_TTGO-T5</a></li>
-  <li value=1><a href="https://github.com/rkiendl/MeshCom">rkiendl/MeshCom</a></li>
-  <li value=1><a href="https://github.com/tobozo/tobozo.github.io">tobozo/tobozo.github.io</a></li>
-  <li value=1><a href="https://github.com/isemann/MeshCom_1.50">isemann/MeshCom_1.50</a></li>
-  <li value=1><a href="https://github.com/isemann/MeshCom_1.52">isemann/MeshCom_1.52</a></li>
-  <li value=1><a href="https://github.com/GNUVario-E/gnuvario-e2">GNUVario-E/gnuvario-e2</a></li>
-  <li value=1><a href="https://github.com/yubox-node-org/yubox-now">yubox-node-org/yubox-now</a></li>
-  <li value=1><a href="https://github.com/Photonsters/ESParaSite-ESP32">Photonsters/ESParaSite-ESP32</a></li>
-  <li value=0><a href="https://github.com/s-reynier/gnuvario-e-bno08x">s-reynier/gnuvario-e-bno08x</a></li>
-  <li value=0><a href="https://github.com/warrenberberd/UART2Wifi">warrenberberd/UART2Wifi</a></li>
-  <li value=0><a href="https://github.com/warrenberberd/TempDataLogger">warrenberberd/TempDataLogger</a></li>
-  <li value=0><a href="https://github.com/s-reynier/gnuvario-e">s-reynier/gnuvario-e</a></li>
-  <li value=0><a href="https://github.com/vioeole/GNUVario-TTGO-T5">vioeole/GNUVario-TTGO-T5</a></li>
-  <li value=0><a href="https://github.com/warrenberberd/ESPProxy">warrenberberd/ESPProxy</a></li>
-  <li value=0><a href="https://github.com/warrenberberd/PWMConverter">warrenberberd/PWMConverter</a></li>
-  <li value=0><a href="https://github.com/michelpa/GnuVarioE">michelpa/GnuVarioE</a></li>
-  <li value=0><a href="https://github.com/ekkus93/esp">ekkus93/esp</a></li>
-  <li value=0><a href="https://github.com/isemann/MeshCom_1.2.53_v1.55">isemann/MeshCom_1.2.53_v1.55</a></li>
-  <li value=0><a href="https://github.com/darshanmirajkar/ESP32-targz">darshanmirajkar/ESP32-targz</a></li>
-  <li value=0><a href="https://github.com/Lumenjer/WiFiClock_64x32">Lumenjer/WiFiClock_64x32</a></li>
-  <li value=0><a href="https://github.com/AndyB1ack/001">AndyB1ack/001</a></li>
-  <li value=0><a href="https://github.com/isemann/MeshCom_1.2.53_v1.56">isemann/MeshCom_1.2.53_v1.56</a></li>
-  <li value=0><a href="https://github.com/jasongayda/TTGo-Watch-Dev">jasongayda/TTGo-Watch-Dev</a></li>
-  <li value=0><a href="https://github.com/pensactius/Video-Game-Music-Library">pensactius/Video-Game-Music-Library</a></li>
-  <li value=0><a href="https://github.com/remyar/diyBMSv4ESP32-alternate">remyar/diyBMSv4ESP32-alternate</a></li>
-  <li value=0><a href="https://github.com/AlexSA6002/-GNUVarioE_Alex">AlexSA6002/-GNUVarioE_Alex</a></li>
-  <li value=0><a href="https://github.com/markctm/JIT-SMARTWATCH">markctm/JIT-SMARTWATCH</a></li>
-  <li value=0><a href="https://github.com/jpg63/GnuVarioE2.1">jpg63/GnuVarioE2.1</a></li>
-  <li value=0><a href="https://github.com/s-reynier/bno-test">s-reynier/bno-test</a></li>
+  <li value=2><a rel="noreferrer" href="https://github.com/jpg63/Gnuvario_for_TTGO-T5">jpg63/Gnuvario_for_TTGO-T5</a></li>
+  <li value=2><a rel="noreferrer" href="https://github.com/jpg63/GnuvarioE_Dev">jpg63/GnuvarioE_Dev</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/rkiendl/MeshCom">rkiendl/MeshCom</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/isemann/MeshCom_1.50">isemann/MeshCom_1.50</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/GNUVario-E/gnuvario-e2">GNUVario-E/gnuvario-e2</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/Photonsters/ESParaSite-ESP32">Photonsters/ESParaSite-ESP32</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/yubox-node-org/yubox-now">yubox-node-org/yubox-now</a></li>
+  <li value=1><a rel="noreferrer" href="https://github.com/isemann/MeshCom_1.52">isemann/MeshCom_1.52</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/s-reynier/gnuvario-e-bno08x">s-reynier/gnuvario-e-bno08x</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/warrenberberd/UART2Wifi">warrenberberd/UART2Wifi</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/warrenberberd/TempDataLogger">warrenberberd/TempDataLogger</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/s-reynier/gnuvario-e">s-reynier/gnuvario-e</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/vioeole/GNUVario-TTGO-T5">vioeole/GNUVario-TTGO-T5</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/warrenberberd/ESPProxy">warrenberberd/ESPProxy</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/warrenberberd/PWMConverter">warrenberberd/PWMConverter</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/michelpa/GnuVarioE">michelpa/GnuVarioE</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/ekkus93/esp">ekkus93/esp</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/isemann/MeshCom_1.2.53_v1.55">isemann/MeshCom_1.2.53_v1.55</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/darshanmirajkar/ESP32-targz">darshanmirajkar/ESP32-targz</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/Lumenjer/WiFiClock_64x32">Lumenjer/WiFiClock_64x32</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/AndyB1ack/001">AndyB1ack/001</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/isemann/MeshCom_1.2.53_v1.56">isemann/MeshCom_1.2.53_v1.56</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/jasongayda/TTGo-Watch-Dev">jasongayda/TTGo-Watch-Dev</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/pensactius/Video-Game-Music-Library">pensactius/Video-Game-Music-Library</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/remyar/diyBMSv4ESP32-alternate">remyar/diyBMSv4ESP32-alternate</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/AlexSA6002/-GNUVarioE_Alex">AlexSA6002/-GNUVarioE_Alex</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/markctm/JIT-SMARTWATCH">markctm/JIT-SMARTWATCH</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/jpg63/GnuVarioE2.1">jpg63/GnuVarioE2.1</a></li>
+  <li value=0><a rel="noreferrer" href="https://github.com/s-reynier/bno-test">s-reynier/bno-test</a></li>
 </ol></html>
