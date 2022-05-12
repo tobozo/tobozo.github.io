@@ -7,6 +7,14 @@
       font-size: 16px;
     }
 
+    pre {
+      font-size: 10px;
+      line-height: 1.2em;
+      max-height: 20rem;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+
     li:empty {
       display: none;
       position:absolute;
@@ -31,6 +39,18 @@
       99% { background: black; width: 0em; }
       100% { width: 0em; background: white; }
     }
+
+    span.showlogs,
+    span.hidelogs { text-decoration:underline; }
+
+    label > input[type="checkbox"] { display:none; }
+    label > input[type="checkbox"]:not(:checked)~pre { display:none; }
+
+    label > input[type="checkbox"]:checked~span.showlogs,
+    label > input[type="checkbox"]:not(:checked)~span.hidelogs { display:none; }
+
+    label > input[type="checkbox"]:checked~span.hidelogs,
+    label > input[type="checkbox"]:not(:checked)~span.showlogs { display:inline; }
 
     .digest {
       font-family: sans-serif;
@@ -132,7 +152,7 @@
 
     </style>
   <dl class="digest"><dt>Keyword</dt><dd><a rel="noreferrer" href="https://github.com/search?type=code&q=M5Core2">M5Core2</a></li></dd><dt>Overall progress</dt><dd>100%</dd>
-<dt>API Success rate</dt><dd>78% (42 requests, 9 errors)</dd>
+<dt>API Success rate</dt><dd>94% (322 requests, 19 errors)</dd>
 <dt>Repositories</dt><dd>325</dd>
 <dt>Accounts</dt><dd>240</dd>
 </dl>
@@ -158,16 +178,16 @@
   <li value=166><a title="m5stack/m5-docs" rel="noreferrer" href="https://github.com/m5stack/m5-docs">m5stack/m5-docs</a></li>
 </ol></li><li><h3>Top10 projects by items</h3>
 <ol class="repos-list items">
+  <li value=77><a rel="noreferrer" title="koverg70/lvgl_m5stack_test" href="https://github.com/koverg70/lvgl_m5stack_test/search?q=M5Core2">lvgl_m5stack_test</a></li>
   <li value=76><a rel="noreferrer" title="kartoffeln2112/iot-thermo" href="https://github.com/kartoffeln2112/iot-thermo/search?q=M5Core2">iot-thermo</a></li>
   <li value=74><a rel="noreferrer" title="mamyudapao/kandenko_back" href="https://github.com/mamyudapao/kandenko_back/search?q=M5Core2">kandenko_back</a></li>
-  <li value=71><a rel="noreferrer" title="koverg70/lvgl_m5stack_test" href="https://github.com/koverg70/lvgl_m5stack_test/search?q=M5Core2">lvgl_m5stack_test</a></li>
   <li value=66><a rel="noreferrer" title="giovanniabbruzzo/M5_based_sensing-unit" href="https://github.com/giovanniabbruzzo/M5_based_sensing-unit/search?q=M5Core2">M5_based_sensing-unit</a></li>
   <li value=16><a rel="noreferrer" title="monopoldesign/M5Core2_Amiga" href="https://github.com/monopoldesign/M5Core2_Amiga/search?q=M5Core2">M5Core2_Amiga</a></li>
   <li value=12><a rel="noreferrer" title="nnm-t/m5core2-visiting-card" href="https://github.com/nnm-t/m5core2-visiting-card/search?q=M5Core2">m5core2-visiting-card</a></li>
+  <li value=10><a rel="noreferrer" title="m5stack/M5Core2" href="https://github.com/m5stack/M5Core2/search?q=M5Core2">M5Core2</a></li>
   <li value=9><a rel="noreferrer" title="cyclexit/m5core2-time-box" href="https://github.com/cyclexit/m5core2-time-box/search?q=M5Core2">m5core2-time-box</a></li>
   <li value=9><a rel="noreferrer" title="robo8080/M5Stack_avatar_lgfx" href="https://github.com/robo8080/M5Stack_avatar_lgfx/search?q=M5Core2">M5Stack_avatar_lgfx</a></li>
   <li value=9><a rel="noreferrer" title="xshigee/gitbook1" href="https://github.com/xshigee/gitbook1/search?q=M5Core2">gitbook1</a></li>
-  <li value=8><a rel="noreferrer" title="sharandac/My-TTGO-Watch" href="https://github.com/sharandac/My-TTGO-Watch/search?q=M5Core2">My-TTGO-Watch</a></li>
 </ol></li><li><h3>Top10 accounts by stars</h3>
 <ol class="users-list stars">
   <li value=4171><a rel="noreferrer" href="https://github.com/orgs/alibaba/repositories?sort=stargazers">alibaba</a></li>
