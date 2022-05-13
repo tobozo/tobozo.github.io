@@ -7,6 +7,14 @@
       font-size: 16px;
     }
 
+    pre {
+      font-size: 10px;
+      line-height: 1.2em;
+      max-height: 20rem;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+
     li:empty {
       display: none;
       position:absolute;
@@ -30,6 +38,23 @@
       1% { background: black; width: 10em; }
       99% { background: black; width: 0em; }
       100% { width: 0em; background: white; }
+    }
+
+
+    span.showlogs,
+    span.hidelogs { text-decoration:underline; }
+
+    label > input[type="checkbox"] { display:none; }
+    label > input[type="checkbox"]:not(:checked)~pre { display:none; }
+
+    label > input[type="checkbox"]:checked~span.showlogs,
+    label > input[type="checkbox"]:not(:checked)~span.hidelogs { display:none; }
+
+    label > input[type="checkbox"]:checked~span.hidelogs,
+    label > input[type="checkbox"]:not(:checked)~span.showlogs { display:inline; }
+
+    .keywords-nav {
+      list-style: number;
     }
 
     .digest {
@@ -132,7 +157,7 @@
 
     </style>
   <dl class="digest"><dt>Keyword</dt><dd><a rel="noreferrer" href="https://github.com/search?type=code&q=ESP32-Targz">ESP32-Targz</a></li></dd><dt>Overall progress</dt><dd>100%</dd>
-<dt>API Success rate</dt><dd>90% (10 requests, 1 error)</dd>
+<dt>API Success rate</dt><dd>100% (48 requests, 0 error)</dd>
 <dt>Repositories</dt><dd>39</dd>
 <dt>Accounts</dt><dd>25</dd>
 </dl>
