@@ -1,0 +1,359 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<style type="text/css">
+
+
+    @media not (prefers-color-scheme: dark) {
+      :root {
+        --background-main-color: #ffffff;
+        --background-alt-color: #f6f8fa;
+        --foreground-main-color: #24292f;
+        --foreground-alt-color: #57606a;
+        --border-light-color:#d8dee4;
+        --border-dark-color: #57606a;
+      }
+
+      ul.keywords-nav li>a:hover::before {
+        filter:invert(1);
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background-main-color: #0d1117;
+        --background-alt-color: #161b22;
+        --foreground-main-color: #c9d1d9;
+        --foreground-alt-color: #99a1a9;
+        --border-light-color:#c9d1d9;
+        --border-dark-color: #99a1a9;
+      }
+      ul.keywords-nav li>a::before {
+        filter:invert(1);
+      }
+      ul.keywords-nav li>a:hover::before {
+        filter:none;
+      }
+    }
+
+
+    body {
+      background-color:var(--background-main-color);
+      color:var(--foreground-main-color);
+      font-family: arial, courier new, sans-serif, sans;
+      /*line-height: 1.25rem;*/
+      font-size: 16px;
+    }
+
+    pre {
+      font-size: 10px;
+      line-height: 1.2em;
+      max-height: 20em;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+
+    li:empty {
+      display: none;
+      position:absolute;
+    }
+
+    li.nobullet {
+      list-style-type: disc;
+    }
+
+
+    nav > ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    nav > ul > li.nav {
+      display: inline-block;
+      font-size: .75em;
+    }
+
+    nav > ul > li.nav:not(:last-of-type)::after {
+      content: " · ";
+      display: inline-block;
+      font-weight: bold;
+      width: 1em;
+      text-align: center;
+    }
+
+
+
+    .progress {
+      display:inline-block;
+      height: 0.2em;
+      width: 10em;
+      animation-name: progress;
+      animation-timing-function: linear;
+      animation-iteration-count: 1;
+    }
+    @keyframes progress {
+      0% { width: 10em; background: white; }
+      1% { background: black; width: 10em; }
+      99% { background: black; width: 0em; }
+      100% { width: 0em; background: white; }
+    }
+
+
+    a:hover {
+      text-decoration: underline;
+    }
+    a {
+      text-decoration: none;
+      display:inline-block;
+      height:1.3em;
+    }
+
+    a > span.slash::after, a > span.slash::before {
+      content: " ";
+      font-size: .5em;
+    }
+    a > span.slash {
+      font-weight: bold;
+      opacity: 0.5;
+      filter: grayscale(1);
+    }
+
+
+    span.showlogs,
+    span.hidelogs { text-decoration:underline; }
+
+    label > input[type="checkbox"] { display:none; }
+    label > input[type="checkbox"]:not(:checked)~pre { display:none; }
+
+    label > input[type="checkbox"]:checked~span.showlogs,
+    label > input[type="checkbox"]:not(:checked)~span.hidelogs { display:none; }
+
+    label > input[type="checkbox"]:checked~span.hidelogs,
+    label > input[type="checkbox"]:not(:checked)~span.showlogs { display:inline; }
+
+    .keywords-nav {
+      list-style: number;
+    }
+
+    .digest {
+      font-family: sans-serif;
+      font-size: .9em;
+    }
+    .digest dt {
+      max-width: 8em;
+      overflow: hidden;
+      white-space: nowrap;
+      line-height: 1.35em;
+    }
+    .digest dd {
+      position: absolute;
+      transform: translate(8em, -1.35em);
+      left: 0;
+      font-weight: bold;
+    }
+
+
+    ol.stars, ol.repos, ol.items {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ol.repos-list.stars.remaining {
+      max-height: 20em;
+      max-width: 20em;
+      overflow-y: auto;
+      display: inline-block;
+      overflow-x: hidden;
+    }
+
+
+    .repos-list > li, .users-list > li {
+      white-space: nowrap;
+      font-size:.85em;
+    }
+
+    .top-10 {
+      display: block;
+      margin: 0;
+      padding: 0;
+      max-height: 22em;
+      overflow: hidden;
+    }
+
+    .top-10 > li, .top-10 > section {
+      display: inline-block;
+      overflow: hidden;
+      margin-right: 1em;
+      vertical-align: top;
+      min-width: 20%;
+      max-width: 24%;
+    }
+
+
+    :is(.top-10 > li, .top-10 > section) > h3 {
+      font-size: 1em;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-bottom: .5em;
+      background-color: var(--background-alt-color);
+    }
+
+    .octicon {
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+      width:16px;
+      height:16px;
+    }
+
+    /**.stars*/
+    li[value]::marker {
+      display:none;
+    }
+
+    :is( .stars, .repos, .items, .search ) li[value]::before,
+    [class$=-icon]::before {
+     font-size: .85rem;
+      display: inline-block;
+      overflow: visible !important;
+      vertical-align: text-bottom;
+      fill: currentColor;
+      content: "  " attr(value) "  ";
+      background-repeat: no-repeat;
+      background-position: left center;
+      text-indent: 1.3em;
+      margin-right: 0.5em;
+      height: inherit;
+    }
+
+    .stars li[value]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='octicon octicon-star mr-1' viewBox='0 0 16 16' version='1.1' width='16' height='16' aria-hidden='true'%3E%3Cpath fill-rule='evenodd' d='M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z'%3E%3C/path%3E%3C/svg%3E");
+    }
+
+    .repos li[value]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true' class='octicon octicon-repo mr-1 color-fg-muted'%3E%3Cpath fill-rule='evenodd' d='M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z'%3E%3C/path%3E%3C/svg%3E");
+    }
+
+    .items li[value]::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-label='File' aria-hidden='true' height='16' viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true' class='octicon octicon-file color-fg-muted'%3E%3Cpath fill-rule='evenodd' d='M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z'%3E%3C/path%3E%3C/svg%3E")
+    }
+
+    .search li[value]::before, .search-icon::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' title='Search' aria-label='Search' role='img' height='16' viewBox='0 0 16 16' version='1.1' width='16' data-view-component='true' class='octicon octicon-search js-jump-to-octicon-search flex-shrink-0'%3E%3Cpath fill-rule='evenodd' d='M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z'%3E%3C/path%3E%3C/svg%3E")
+    }
+
+  </style>
+</head>
+<body>
+<header>
+      <nav>
+      <ul>
+              <li class="nav"><a href="Arduino_GFX.html">Arduino_GFX</a></li>
+              <li class="nav"><a href="ESP32-Chimera-Core.html">ESP32-Chimera-Core</a></li>
+              <li class="nav"><a href="ESP32-Targz.html">ESP32-Targz</a></li>
+              <li class="nav"><a href="LovyanGFX.html">LovyanGFX</a></li>
+              <li class="nav"><a href="M5Core2.html">M5Core2</a></li>
+              <li class="nav"><a href="M5Stack.html">M5Stack</a></li>
+              <li class="nav"><a href="M5Stack-SD-Updater.html">M5Stack-SD-Updater</a></li>
+              <li class="nav"><a href="M5StackUpdater.html">M5StackUpdater</a></li>
+              <li class="nav"><a href="M5StickC.html">M5StickC</a></li>
+              <li class="nav"><a href="M5Unified.html">M5Unified</a></li>
+              <li class="nav"><a href="MOS6581.html">MOS6581</a></li>
+              <li class="nav"><a href="PSRamFS.html">PSRamFS</a></li>
+              <li class="nav"><a href="wisblock.html">wisblock</a></li>
+            <ul>
+    </nav>
+  </header>
+<main>
+  <article>
+    <h1>Keyword: YAMLDuino</h1>
+    <p>Last update: 2023-05-09</p>
+  </article>
+
+  <section>
+    <h2>Digest</h2>
+    <dl class="digest">
+      <dt>Keyword Index</dt><dd><a class="search-icon" rel="noreferrer" href="https://github.com/search?type=code&q=YAMLDuino">YAMLDuino</a></li></dd>
+      <dt>Repositories</dt><dd>4</dd>
+      <dt>Accounts</dt><dd>4</dd>
+    </dl>
+  </section>
+
+
+      <section>
+      <h3>Last 4 items added</h3>
+      <ol class="repos-list">
+                  <li><a rel="noreferrer" href="https://github.com/wokwi/wokwi-library-index">wokwi<span class=slash>/</span>wokwi-library-index</a></li>
+                  <li><a rel="noreferrer" href="https://github.com/mongonta0716/stackchan-bluetooth-simple">mongonta0716<span class=slash>/</span>stackchan-bluetooth-simple</a></li>
+                  <li><a rel="noreferrer" href="https://github.com/tobozo/YAMLDuino">tobozo<span class=slash>/</span>YAMLDuino</a></li>
+                  <li><a rel="noreferrer" href="https://github.com/arduino/library-registry">arduino<span class=slash>/</span>library-registry</a></li>
+              </ol>
+    </section>
+  
+
+  <div class="top-10">
+
+          <section>
+        <h3>Top 4 projects by stars</h3>
+        <ol class="repos-list stars">
+                      <li value="143"><a title="arduino/library-registry" rel="noreferrer" href="https://github.com/arduino/library-registry">arduino<span class=slash>/</span>library-registry</a></li>
+                      <li value="20"><a title="tobozo/YAMLDuino" rel="noreferrer" href="https://github.com/tobozo/YAMLDuino">tobozo<span class=slash>/</span>YAMLDuino</a></li>
+                      <li value="9"><a title="mongonta0716/stackchan-bluetooth-simple" rel="noreferrer" href="https://github.com/mongonta0716/stackchan-bluetooth-simple">mongonta0716<span class=slash>/</span>stackchan-bluetooth-simple</a></li>
+                      <li value="1"><a title="wokwi/wokwi-library-index" rel="noreferrer" href="https://github.com/wokwi/wokwi-library-index">wokwi<span class=slash>/</span>wokwi-library-index</a></li>
+                  </ol>
+      </section>
+    
+          <section>
+        <h3>Top 4 projects by items</h3>
+        <ol class="repos-list items">
+                      <li value="12"><a title="tobozo/YAMLDuino" rel="noreferrer"
+              href="https://github.com/tobozo/YAMLDuino/search?q=YAMLDuino">tobozo<span class=slash>/</span>YAMLDuino</a></li>
+                      <li value="3"><a title="mongonta0716/stackchan-bluetooth-simple" rel="noreferrer"
+              href="https://github.com/mongonta0716/stackchan-bluetooth-simple/search?q=YAMLDuino">mongonta0716<span class=slash>/</span>stackchan-bluetooth-simple</a></li>
+                      <li value="1"><a title="arduino/library-registry" rel="noreferrer"
+              href="https://github.com/arduino/library-registry/search?q=YAMLDuino">arduino<span class=slash>/</span>library-registry</a></li>
+                      <li value="1"><a title="wokwi/wokwi-library-index" rel="noreferrer"
+              href="https://github.com/wokwi/wokwi-library-index/search?q=YAMLDuino">wokwi<span class=slash>/</span>wokwi-library-index</a></li>
+                  </ol>
+      </section>
+    
+          <section>
+        <h3>Top 4 accounts by projects owned</h3>
+        <ol class="users-list repos">
+                      <li value="1"><a rel="noreferrer"
+              href="https://github.com/orgs/wokwi/repositories?type=source">wokwi</a></li>
+                      <li value="1"><a rel="noreferrer"
+              href="https://github.com/mongonta0716?tab=repositories&type=source">mongonta0716</a></li>
+                      <li value="1"><a rel="noreferrer"
+              href="https://github.com/tobozo?tab=repositories&type=source">tobozo</a></li>
+                      <li value="1"><a rel="noreferrer"
+              href="https://github.com/orgs/arduino/repositories?type=source">arduino</a></li>
+                  </ol>
+      </section>
+    
+          <section>
+        <h3>Top 4 accounts by stars</h3>
+        <ol class="users-list stars">
+                      <li value="143"><a rel="noreferrer"
+              href="https://github.com/orgs/arduino/repositories?sort=stargazers">arduino</a></li>
+                      <li value="20"><a rel="noreferrer"
+              href="https://github.com/tobozo?tab=repositories&sort=stargazers">tobozo</a></li>
+                      <li value="9"><a rel="noreferrer"
+              href="https://github.com/mongonta0716?tab=repositories&sort=stargazers">mongonta0716</a></li>
+                      <li value="1"><a rel="noreferrer"
+              href="https://github.com/orgs/wokwi/repositories?sort=stargazers">wokwi</a></li>
+                  </ol>
+      </section>
+    
+  </div>
+
+
+  
+</main>
+<footer>
+
+</footer>
+</body>
+</html>
+
